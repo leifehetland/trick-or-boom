@@ -1,0 +1,20 @@
+{
+  "name": "Trick-Or-Boom",
+  "homepage": "https://github.com/leifehetland/trick-or-boom",
+  "authors": [
+    "Leif Hetland <lehetland1@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser": "^2.4.8"
+  }
+}
