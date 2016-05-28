@@ -207,6 +207,17 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\phaserJS\main.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Bomb.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Enemy.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Explosion.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Player.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Prefab.js" />
+    <Content Include="Scripts\phaserJS\prefabs\TextPrefab.js" />
+    <Content Include="Scripts\phaserJS\states\BootState.js" />
+    <Content Include="Scripts\phaserJS\states\LoadingState.js" />
+    <Content Include="Scripts\phaserJS\states\TiledState.js" />
+    <Content Include="Scripts\phaserJS\utilites.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -247,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\images\" />
+    <Folder Include="Assets\levels\" />
+    <Folder Include="Assets\maps\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
