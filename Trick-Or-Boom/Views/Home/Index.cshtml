@@ -29,22 +29,9 @@
     </div>
 
     <!--SCRIPTS-->
-
-    <script src="~/Scripts/phaserJS/utilites.js"></script>
-
-    <script src="~/Scripts/phaserJS/states/BootState.js"></script>
-    <script src="~/Scripts/phaserJS/states/LoadingState.js"></script>
-    <script src="~/Scripts/phaserJS/states/TiledState.js"></script>
-
-    <script src="~/Scripts/phaserJS/prefabs/Prefab.js"></script>
-    <script src="~/Scripts/phaserJS/prefabs/TextPrefab.js"></script>
-
-    <script src="~/Scripts/phaserJS/prefabs/Player.js"></script>
-    <script src="~/Scripts/phaserJS/prefabs/Bomb.js"></script>
-    <script src="~/Scripts/phaserJS/prefabs/Explosion.js"></script>
-    <script src="~/Scripts/phaserJS/prefabs/Enemy.js"></script>
-
-    <script type="text/javascript" src="~/Scripts/phaserJS/main.js"></script>
+    @Scripts.Render("~/lib/phaser")
+    @Scripts.Render("~/bundle/phaser")
+    
 </body>
 </html>
 

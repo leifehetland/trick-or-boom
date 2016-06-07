@@ -26,6 +26,28 @@ namespace Trick_Or_Boom
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/lib/phaser").Include(
+                     "~/bower_components/phaser/build/phaser.js",
+                     "~/bower_components/phaser/src/pixi/Pixi.js",
+                     "~/bower_components/phaser/src/physics/p2.js"
+                     ));
+
+            bundles.Add(new ScriptBundle("~/bundle/phaser").Include(
+                      "~/Scripts/phaserJS/main.js",
+                      "~/Scripts/phaserJS/utilites.js",
+                      "~/Scripts/phaserJS/prefabs/Bomb.js",
+                      "~/Scripts/phaserJS/prefabs/Enemy.js",
+                      "~/Scripts/phaserJS/prefabs/Explosion.js",
+                      "~/Scripts/phaserJS/prefabs/Player.js",
+                      "~/Scripts/phaserJS/prefabs/Prefab.js",
+                      "~/Scripts/phaserJS/prefabs/TextPrefab.js",
+                      "~/Scripts/phaserJS/states/BootState.js",
+                      "~/Scripts/phaserJS/states/LoadingState.js",
+                      "~/Scripts/phaserJS/states/TiledState.js"
+                      ));
+
+            
         }
     }
 }
