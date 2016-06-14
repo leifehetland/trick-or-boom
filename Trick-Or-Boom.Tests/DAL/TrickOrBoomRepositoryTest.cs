@@ -1,24 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Trick_Or_Boom.DAL;
+using System.Linq;
+using System.Data.Entity;
 
 namespace Trick_Or_Boom.Tests.DAL
 {
     [TestClass]
     public class TrickOrBoomRepositoryTest
     {
-        [TestInitialize]
- +        public void Initialize()
- +        {
- +
- +        }
- +
- +        [TestCleanup]
- +        public void Cleanup()
- +        {
- +
- +        }
-
         [TestMethod]
         public void RepoEnsureICanCreateAnInstance()
         {

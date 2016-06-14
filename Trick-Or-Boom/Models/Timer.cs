@@ -9,5 +9,7 @@ namespace Trick_Or_Boom.Models
     {
         public int TimerId { get; set; }
         public int Time { get; set; }
+
+        public virtual ApplicationUser CreatedBy { get; set; }
     }
 }
