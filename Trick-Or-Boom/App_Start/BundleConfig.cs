@@ -34,17 +34,23 @@ namespace Trick_Or_Boom
                      ));
 
             bundles.Add(new ScriptBundle("~/bundle/phaser").Include(
-                      "~/Scripts/phaserJS/main.js",
                       "~/Scripts/phaserJS/utilites.js",
-                      "~/Scripts/phaserJS/prefabs/Bomb.js",
-                      "~/Scripts/phaserJS/prefabs/Enemy.js",
-                      "~/Scripts/phaserJS/prefabs/Explosion.js",
-                      "~/Scripts/phaserJS/prefabs/Player.js",
-                      "~/Scripts/phaserJS/prefabs/Prefab.js",
-                      "~/Scripts/phaserJS/prefabs/TextPrefab.js",
                       "~/Scripts/phaserJS/states/BootState.js",
                       "~/Scripts/phaserJS/states/LoadingState.js",
-                      "~/Scripts/phaserJS/states/TiledState.js"
+                      "~/Scripts/phaserJS/states/TiledState.js",
+                      "~/Scripts/phaserJS/prefabs/Prefab.js",
+                      "~/Scripts/phaserJS/prefabs/TextPrefab.js",
+                      "~/Scripts/phaserJS/prefabs/Bomb.js",
+                      "~/Scripts/phaserJS/prefabs/BombItem.js",
+                      "~/Scripts/phaserJS/prefabs/Enemy.js",
+                      "~/Scripts/phaserJS/prefabs/Explosion.js",
+                      "~/Scripts/phaserJS/prefabs/Goal.js",
+                      "~/Scripts/phaserJS/prefabs/Item.js",
+                      "~/Scripts/phaserJS/prefabs/LifeItem.js",
+                      "~/Scripts/phaserJS/prefabs/Lives.js",
+                      "~/Scripts/phaserJS/prefabs/Target.js",
+                      "~/Scripts/phaserJS/prefabs/Player.js",
+                      "~/Scripts/phaserJS/main.js"
                       ));
 
             
