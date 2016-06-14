@@ -7,9 +7,9 @@ using Trick_Or_Boom.Models;
 
 namespace Trick_Or_Boom.DAL
 {
-    public class TrickOrBoomContext : DbContext
+    public class TrickOrBoomContext : ApplicationDbContext
     {
-        public DbSet<Timer> GameTimer { get; set; }
-        public DbSet<Level> GameLevel { get; set; }
+        public virtual DbSet<Timer> GameTimer { get; set; }
+        public virtual DbSet<Level> GameLevel { get; set; }
     }
 }
