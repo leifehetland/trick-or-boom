@@ -1,0 +1,45 @@
+{
+  "assets": {
+    "map_tiles": {
+      "type": "image",
+      "source": "Assets/images/AllSpriteSheetFinal.png"
+    },
+    "player_spritesheet": {
+      "type": "spritesheet",
+      "source": "Assets/images/player_spritesheet.png",
+      "frame_width": 24,
+      "frame_height": 24
+    },
+    "bomb_spritesheet": {
+      "type": "spritesheet",
+      "source": "Assets/images/bomb_spritesheet.png",
+      "frame_width": 24,
+      "frame_height": 24
+    },
+    "enemy_spritesheet": {
+      "type": "spritesheet",
+      "source": "Assets/images/enemy_spritesheet.png",
+      "frame_width": 24,
+      "frame_height": 24
+    },
+    "explosion_image": {
+      "type": "image",
+      "source": "Assets/images/explosion.png"
+    },
+
+    "level_tilemap": {
+      "type": "tilemap",
+      "source": "Assets/maps/level1_map.json"
+    }
+  },
+  "groups": [
+    "explosions",
+    "bombs",
+    "enemies",
+    "players"
+  ],
+  "map": {
+    "key": "level_tilemap",
+    "tilesets": [ "map_tiles" ]
+  }
+}
