@@ -1,0 +1,26 @@
+{
+	"menu_items": {
+		"game_start": {
+			"position": {
+				"x": 216,
+				"y": 168
+			},
+			"properties": {
+				"text": "Start Game",
+				"style": {
+					"font": "16px Creepster",
+					"fill": "green",
+					"text-align": "center"
+				},
+				"group": "menu_items",
+				"level_file": "assets/levels/level1.json",
+				"state_name": "StartGameState"
+			}
+		}
+	},
+	"groups": [
+		"background",
+		"menu_items",
+		"hud"
+	]
+}
