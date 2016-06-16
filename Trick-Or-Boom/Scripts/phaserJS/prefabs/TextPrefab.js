@@ -1,12 +1,17 @@
 ﻿var TrickOrBoom = TrickOrBoom || {};
 
-TrickOrBoom.create_prefab_from_pool = function (pool, prefab_constructor, game_state, prefab_name, prefab_position, prefab_properties) {
+TrickOrBoom.TextPrefab = function (game_state, name, position, properties) {
     "use strict";
-    var prefab;
-    prefab = pool.getFirstDead();
-    if (!prefab) {
-        prefab = new prefab_constructor(game_state, prefab_name, prefab_position, prefab_properties);
-    } else {
-        prefab.reset(prefab_position.x, prefab_position.y);
-    }
+    Phaser.Text.call(this, game_state.game, position.x, position.y, properties.text, properties.style);
+    
+    this.game_state = game_state;
+    
+    this.name = name;
+    
+    this.game_state.groups[properties.group].add(this);
+    
+    this.game_state.prefabs[name] = this;
 };
+
+TrickOrBoom.TextPrefab.prototype = Object.create(Phaser.Text.prototype);
+TrickOrBoom.TextPrefab.prototype.constructor = TrickOrBoom.TextPrefab;
