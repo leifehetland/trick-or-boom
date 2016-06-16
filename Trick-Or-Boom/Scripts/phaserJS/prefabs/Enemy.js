@@ -40,25 +40,20 @@ TrickOrBoom.Enemy.prototype.update = function () {
     this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.explosions, this.kill, null, this);
 
     if (this.body.velocity.x < 0) {
-        // walking left
         this.scale.setTo(-1, 1);
         this.animations.play("walking_left");
     } else if (this.body.velocity.x > 0) {
-        // walking right
         this.scale.setTo(1, 1);
         this.animations.play("walking_right");
     }
 
     if (this.body.velocity.y < 0) {
-        // walking up
         this.animations.play("walking_up");
     } else if (this.body.velocity.y > 0) {
-        // walking down
         this.animations.play("walking_down");
     }
 
     if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
-        // stop current animation
         this.animations.stop();
         this.frame = this.stopped_frames[this.body.facing];
     }
