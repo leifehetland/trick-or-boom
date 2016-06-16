@@ -186,6 +186,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameStateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\TrickOrBoomContext.cs" />
@@ -193,9 +194,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606140124376_InitialCreate.cs" />
+    <Compile Include="Migrations\201606140124376_InitialCreate.Designer.cs">
+      <DependentUpon>201606140124376_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606141653197_Testing.cs" />
+    <Compile Include="Migrations\201606141653197_Testing.Designer.cs">
+      <DependentUpon>201606141653197_Testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Gamestate.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Level.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Timer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -219,15 +232,26 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\phaserJS\main.js" />
     <Content Include="Scripts\phaserJS\prefabs\Bomb.js" />
+    <Content Include="Scripts\phaserJS\prefabs\BombItem.js" />
     <Content Include="Scripts\phaserJS\prefabs\Enemy.js" />
     <Content Include="Scripts\phaserJS\prefabs\Explosion.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Goal.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Item.js" />
+    <Content Include="Scripts\phaserJS\prefabs\LifeItem.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Lives.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Menu.js" />
+    <Content Include="Scripts\phaserJS\prefabs\MenuItem.js" />
     <Content Include="Scripts\phaserJS\prefabs\Player.js" />
     <Content Include="Scripts\phaserJS\prefabs\Prefab.js" />
+    <Content Include="Scripts\phaserJS\prefabs\Target.js" />
     <Content Include="Scripts\phaserJS\prefabs\TextPrefab.js" />
     <Content Include="Scripts\phaserJS\states\BootState.js" />
     <Content Include="Scripts\phaserJS\states\LoadingState.js" />
+    <Content Include="Scripts\phaserJS\states\StartGameState.js" />
     <Content Include="Scripts\phaserJS\states\TiledState.js" />
-    <Content Include="Scripts\phaserJS\utilites.js" />
+    <Content Include="Scripts\phaserJS\states\TitleState.js" />
+    <Content Include="Scripts\phaserJS\UserInput.js" />
+    <Content Include="Scripts\phaserJS\Utils.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -278,6 +302,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606140124376_InitialCreate.resx">
+      <DependentUpon>201606140124376_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606141653197_Testing.resx">
+      <DependentUpon>201606141653197_Testing.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
