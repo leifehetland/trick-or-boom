@@ -34,6 +34,10 @@ TrickOrBoom.LoadingState.prototype.preload = function () {
             }
         }
     }
+
+    if (this.level_data.user_input) {
+        this.load.text("user_input", this.level_data.user_input);
+    }
 };
 
 TrickOrBoom.LoadingState.prototype.create = function () {

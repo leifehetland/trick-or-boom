@@ -6,7 +6,15 @@ TrickOrBoom.TiledState = function () {
 
     this.prefab_classes = {
         "player": TrickOrBoom.Player.prototype.constructor,
-        "enemy": TrickOrBoom.Enemy.prototype.constructor
+        "enemy": TrickOrBoom.Enemy.prototype.constructor,
+        "target": TrickOrBoom.Target.prototype.constructor,
+        "life_item": TrickOrBoom.LifeItem.prototype.constructor,
+        "bomb_item": TrickOrBoom.BombItem.prototype.constructor
+    };
+
+    this.items = {
+        life_item: { probability: 0.1, properties: { texture: "life_item_image", group: "items" } },
+        bomb_item: { probability: 0.3, properties: { texture: "bomb_item_image", group: "items" } }
     };
 };
 
@@ -22,17 +30,19 @@ TrickOrBoom.TiledState.prototype.init = function (level_data) {
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
 
-    // start physics system
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.game.physics.arcade.gravity.y = 0;
 
-    // create map and set tileset
     this.map = this.game.add.tilemap(level_data.map.key);
     tileset_index = 0;
     this.map.tilesets.forEach(function (tileset) {
         this.map.addTilesetImage(tileset.name, level_data.map.tilesets[tileset_index]);
         tileset_index += 1;
     }, this);
+
+    if (this.level_data.first_level) {
+        localStorage.clear();
+    }
 };
 
 TrickOrBoom.TiledState.prototype.create = function () {
@@ -42,9 +52,9 @@ TrickOrBoom.TiledState.prototype.create = function () {
     this.layers = {};
     this.map.layers.forEach(function (layer) {
         this.layers[layer.name] = this.map.createLayer(layer.name);
-        if (layer.properties.collision) { 
+        if (layer.properties.collision) {
             collision_tiles = [];
-            layer.data.forEach(function (data_row) { 
+            layer.data.forEach(function (data_row) {
                 data_row.forEach(function (tile) {
                     if (tile.index > 0 && collision_tiles.indexOf(tile.index) === -1) {
                         collision_tiles.push(tile.index);
@@ -68,6 +78,10 @@ TrickOrBoom.TiledState.prototype.create = function () {
             this.map.objects[object_layer].forEach(this.create_object, this);
         }
     }
+
+    this.game.user_input = this.game.plugins.add(TrickOrBoom.UserInput, this, JSON.parse(this.game.cache.getText("user_input")));
+
+    this.init_hud();
 };
 
 TrickOrBoom.TiledState.prototype.create_object = function (object) {
@@ -81,8 +95,23 @@ TrickOrBoom.TiledState.prototype.create_object = function (object) {
     this.prefabs[object.name] = prefab;
 };
 
-TrickOrBoom.TiledState.prototype.game_over = function () {
+TrickOrBoom.TiledState.prototype.init_hud = function () {
     "use strict";
-    localStorage.clear();
+    var lives_position, lives_properties, lives;
+
+    lives_position = new Phaser.Point(0.5 * this.game.world.width, 0.04 * this.game.world.height);
+    lives_properties = { group: "hud", texture: "lives_image", number_of_lives: 3 };
+    lives = new TrickOrBoom.Lives(this, "lives", lives_position, lives_properties);
+};
+
+TrickOrBoom.TiledState.prototype.show_game_over = function () {
+    "use strict";
     this.game.state.restart(true, false, this.level_data);
+};
+
+TrickOrBoom.TiledState.prototype.next_level = function () {
+    "use strict";
+    localStorage.number_of_lives = this.prefabs.player.number_of_lives;
+    localStorage.number_of_bombs = this.prefabs.player.number_of_bombs;
+    this.game.state.start("BootState", true, false, this.level_data.next_level, "TiledState");
 };
