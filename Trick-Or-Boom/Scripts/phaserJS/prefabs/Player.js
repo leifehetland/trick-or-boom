@@ -114,10 +114,10 @@ TrickOrBoom.Player.prototype.drop_bomb = function () {
 TrickOrBoom.Player.prototype.die = function () {
     "use strict";
     this.number_of_lives -= 1;
-    if (this.game_state.prefabs.lives.number_of_lives <= 0) {
-        this.game_state.game_over();
+    if (this.number_of_lives <= 0) {
+        tihs.kill();
+        this.game_state.show_game_over();
     } else {
-        this.x = this.initial_position.x;
-        this.y = this.initial_position.y;
+        this.reset(this.initial_position.x, this.initial_position.y);
     }
 };

@@ -112,7 +112,7 @@ TrickOrBoom.TiledState.prototype.show_game_over = function () {
     game_over_bitmap.ctx.fillStyle = "#000";
     game_over_bitmap.ctx.fillRect(0, 0, this.game.world.width, this.game.world.height);
     panel_text_style = {
-        game_over: { font: "32px Creepster", fill: "#FFF" },
+        game_over: { font: "32px Creepster", fill: "green" },
         winner: { font: "20px Creepster", fill: "#FFF" }
     };
 

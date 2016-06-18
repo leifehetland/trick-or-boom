@@ -5,10 +5,12 @@ TrickOrBoom.Lives = function (game_state, name, position, properties) {
     var lives_text_position, lives_text_style, lives_text_properties;
     TrickOrBoom.Prefab.call(this, game_state, name, position, properties);
 
+    this.player = properties.player;
+
     this.fixedToCamera = true;
 
     this.anchor.setTo(0.5);
-    this.scale.setTo(0.9);
+    this.scale.setTo(0.6);
 
     lives_text_position = new Phaser.Point(this.position.x - 2, this.position.y + 5);
     lives_text_style = { font: "16px Creepster", fill: "#fff" };
@@ -22,5 +24,5 @@ TrickOrBoom.Lives.prototype.constructor = TrickOrBoom.Lives;
 
 TrickOrBoom.Lives.prototype.update = function () {
     "use strict";
-    this.lives_text.text = this.game_state.prefabs.player.number_of_lives;
+    this.lives_text.text = this.game_state.prefabs[this.player].number_of_lives;
 };
