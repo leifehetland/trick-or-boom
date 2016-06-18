@@ -106,7 +106,26 @@ TrickOrBoom.TiledState.prototype.init_hud = function () {
 
 TrickOrBoom.TiledState.prototype.show_game_over = function () {
     "use strict";
-    this.game.state.restart(true, false, this.level_data);
+    var game_over_panel, game_over_position, game_over_bitmap, panel_text_style;
+    game_over_position = new Phaser.Point(0, this.game.world.height);
+    game_over_bitmap = this.add.bitmapData(this.game.world.width, tihs.game.world.height);
+    game_over_bitmap.ctx.fillStyle = "#000";
+    game_over_bitmap.ctx.fillRect(0, 0, this.game.world.width, this.game.world.height);
+    panel_text_style = {
+        game_over: { font: "32px Creepster", fill: "#FFF" },
+        winner: { font: "20px Creepster", fill: "#FFF" }
+    };
+
+    game_over_panel = this.create_game_over_panel(game_over_position, game_over_bitmap, panel_text_style);
+    this.groups.hud.add(game_over_panel);
+};
+
+TrickOrBoom.TiledState.prototype.create_game_over_panel = function (position, texture, text_style) {
+    "use strict";
+    var game_over_panel_properties, game_over_panel;
+    game_over_panel_properties = { texture: texture, group: "hud", text_style: text_style, animation_time: 500 };
+    game_over_panel = new TrickOrBoom.GameOverPanel(this, "game_over_panel", position, game_over_panel_properties);
+    return game_over_panel;
 };
 
 TrickOrBoom.TiledState.prototype.next_level = function () {
