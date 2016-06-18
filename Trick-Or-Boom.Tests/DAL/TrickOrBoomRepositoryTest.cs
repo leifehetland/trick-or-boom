@@ -25,5 +25,12 @@ namespace Trick_Or_Boom.Tests.DAL
             //Assert
             Assert.IsNotNull(repo.context);
         }
+
+        [TestMethod]
+        public void RepoEnsureThereAreNoLevelStatesSaved()
+        {
+            //Arrange
+
+        }
     }
 }

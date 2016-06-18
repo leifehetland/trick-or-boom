@@ -28,5 +28,5 @@
         "tilesets": ["map_tiles"]
     },
     "user_input": "assets/levels/user_input.json",
-    "next_level": "assets/levels/level1.json"
+    "next_level": "assets/levels/level4.json"
 }

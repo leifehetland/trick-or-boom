@@ -55,6 +55,7 @@ namespace Trick_Or_Boom
                       "~/Scripts/phaserJS/prefabs/Lives.js",
                       "~/Scripts/phaserJS/prefabs/MenuItem.js",
                       "~/Scripts/phaserJS/prefabs/Menu.js",
+                      "~/Scripts/phaserJS/prefabs/GameOverPanel.js",
 
                       "~/Scripts/phaserJS/main.js"
                       ));
