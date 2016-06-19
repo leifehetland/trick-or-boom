@@ -23,14 +23,7 @@ namespace Trick_Or_Boom.Tests.DAL
             TrickOrBoomRepository repo = new TrickOrBoomRepository();
 
             //Assert
-            Assert.IsNotNull(repo.context);
-        }
-
-        [TestMethod]
-        public void RepoEnsureThereAreNoLevelStatesSaved()
-        {
-            //Arrange
-
+            Assert.IsNotNull(repo);
         }
     }
 }

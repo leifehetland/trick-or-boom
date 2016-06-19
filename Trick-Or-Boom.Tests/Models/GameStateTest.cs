@@ -7,60 +7,60 @@ using System.Linq;
 namespace Trick_Or_Boom.Tests.Models
 {
     [TestClass]
-    public class TimerTest
+    public class GameStateTest
     {
         [TestMethod]
-        public void TimerEnsureICanCreateAnInstance()
+        public void LevelEnsureICanCreateAnInstance()
         {
-            Timer t = new Timer();
-            Assert.IsNotNull(t);
+            GameState g = new GameState();
+            Assert.IsNotNull(g);
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
-        public void TimerEnsureICanSaveTime()
+        public void LevelEnsureICanSaveLevel()
         {
             //Arrange
             TrickOrBoomContext context = new TrickOrBoomContext();
-            Timer t = new Timer();
+            GameState g = new GameState();
 
             //Act
-            context.GameTimer.Add(t);
+            context.GameState.Add(g);
             context.SaveChanges();
 
             //Assert
-            Assert.AreEqual(1, context.GameTimer.Find().TimerId);
+            Assert.AreEqual(1, context.GameState.Find().LevelNum);
 
         }
 
         [TestMethod]
-        public void TimerEnsureInstanceIsValid1()
+        public void LevelEnsureInstanceIsValid1()
         {
             //Arrange
             TrickOrBoomContext context = new TrickOrBoomContext();
-            Timer t = new Timer();
+            GameState g = new GameState();
 
             //Act
-            t.Time = 5;
-            context.GameTimer.Add(t);
+            g.LevelNum = 2;
+            context.GameState.Add(g);
 
             //Assert
-            Assert.IsTrue(context.GameTimer.Count() > 1);
+            Assert.IsTrue(context.GameState.Count() > 1);
         }
 
         [TestMethod]
-        public void TimerEnsureInstanceIsValid2()
+        public void LevelEnsureInstanceIsValid2()
         {
             //Arrange
             TrickOrBoomContext context = new TrickOrBoomContext();
-            Timer t = new Timer();
+            GameState g = new GameState();
 
             //Act
-            t.Time = 307;
-            context.GameTimer.Add(t);
+            g.LevelNum = 5;
+            context.GameState.Add(g);
 
             //Assert
-            Assert.IsTrue(context.GameTimer.Count() > 1);
+            Assert.IsTrue(context.GameState.Count() > 1);
         }
     }
 }
