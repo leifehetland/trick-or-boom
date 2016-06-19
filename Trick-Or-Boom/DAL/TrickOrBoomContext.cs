@@ -9,7 +9,7 @@ namespace Trick_Or_Boom.DAL
 {
     public class TrickOrBoomContext : ApplicationDbContext
     {
-        public virtual DbSet<Timer> GameTimer { get; set; }
-        public virtual DbSet<Level> GameLevel { get; set; }
+        public virtual DbSet<GameState> GameState { get; set; }
+        
     }
 }

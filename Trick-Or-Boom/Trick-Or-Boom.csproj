@@ -194,21 +194,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606140124376_InitialCreate.cs" />
-    <Compile Include="Migrations\201606140124376_InitialCreate.Designer.cs">
-      <DependentUpon>201606140124376_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606141653197_Testing.cs" />
-    <Compile Include="Migrations\201606141653197_Testing.Designer.cs">
-      <DependentUpon>201606141653197_Testing.cs</DependentUpon>
+    <Compile Include="Migrations\201606181608497_InitialCreate.cs" />
+    <Compile Include="Migrations\201606181608497_InitialCreate.Designer.cs">
+      <DependentUpon>201606181608497_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Gamestate.cs" />
+    <Compile Include="Models\GameState.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Level.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Timer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -235,6 +229,7 @@
     <Content Include="Scripts\phaserJS\prefabs\BombItem.js" />
     <Content Include="Scripts\phaserJS\prefabs\Enemy.js" />
     <Content Include="Scripts\phaserJS\prefabs\Explosion.js" />
+    <Content Include="Scripts\phaserJS\prefabs\GameOverPanel.js" />
     <Content Include="Scripts\phaserJS\prefabs\Goal.js" />
     <Content Include="Scripts\phaserJS\prefabs\Item.js" />
     <Content Include="Scripts\phaserJS\prefabs\LifeItem.js" />
@@ -304,11 +299,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606140124376_InitialCreate.resx">
-      <DependentUpon>201606140124376_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606141653197_Testing.resx">
-      <DependentUpon>201606141653197_Testing.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606181608497_InitialCreate.resx">
+      <DependentUpon>201606181608497_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

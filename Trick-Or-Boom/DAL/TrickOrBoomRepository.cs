@@ -9,8 +9,8 @@ namespace Trick_Or_Boom.DAL
 {
     public class TrickOrBoomRepository
     {
-        public TrickOrBoomContext context { get; set; }
-        public IDbSet<ApplicationUser> Users { get { return context.Users; } }
+        private TrickOrBoomContext context { get; set; }
+        private IDbSet<ApplicationUser> Users { get { return context.Users; } }
 
         public TrickOrBoomRepository()
         {
@@ -22,9 +22,15 @@ namespace Trick_Or_Boom.DAL
             context = _context;
         }
 
-        public ApplicationUser GetUser(string user_id)
+        public int GetLevel(string user_id)
         {
-            return context.Users.FirstOrDefault(i => i.Id == user_id);
+            var gameState = context.GameState.SingleOrDefault(g => g.CreatedBy.Id == user_id);
+            if (gameState == null)
+            {
+                return 0;
+            }
+            return gameState.LevelNum;
+            
         }
     }
 }
