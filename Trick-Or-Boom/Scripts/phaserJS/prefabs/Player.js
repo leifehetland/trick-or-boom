@@ -115,7 +115,7 @@ TrickOrBoom.Player.prototype.die = function () {
     "use strict";
     this.number_of_lives -= 1;
     if (this.number_of_lives <= 0) {
-        tihs.kill();
+        this.kill();
         this.game_state.show_game_over();
     } else {
         this.reset(this.initial_position.x, this.initial_position.y);
