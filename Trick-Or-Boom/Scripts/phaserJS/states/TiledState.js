@@ -108,7 +108,7 @@ TrickOrBoom.TiledState.prototype.show_game_over = function () {
     "use strict";
     var game_over_panel, game_over_position, game_over_bitmap, panel_text_style;
     game_over_position = new Phaser.Point(0, this.game.world.height);
-    game_over_bitmap = this.add.bitmapData(this.game.world.width, tihs.game.world.height);
+    game_over_bitmap = this.add.bitmapData(this.game.world.width, this.game.world.height);
     game_over_bitmap.ctx.fillStyle = "#000";
     game_over_bitmap.ctx.fillRect(0, 0, this.game.world.width, this.game.world.height);
     panel_text_style = {
